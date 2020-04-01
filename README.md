@@ -3,7 +3,7 @@
 This repository contains scripts which are used to create Android-x86 images
 for use with qemu/KVM.
 
-The output is a docker image, quay.io/kubedroid/android-x86-qemu:9.0-r2, which
+The output is a docker image, quay.io/kubedroid/android-x86-qemu:7.1-r3, which
 you can run in Docker.
 
 You can use this command to run this Docker image. It requires access to KVM and
@@ -18,7 +18,7 @@ sudo docker run --rm -it \
     --device /dev/dri \
     --device /dev/vfio/vfio \
     --device /dev/vfio/12 \
-    quay.io/quamotion/android-x86-qemu:9.0-r2
+    quay.io/kubedroid/android-x86-qemu:7.1-r3
 ```
 
 ## Accessing your Android VM

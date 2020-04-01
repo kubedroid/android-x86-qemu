@@ -1,5 +1,5 @@
 *.iso
-!android-x86_64-9.0-r2.iso
+!android-x86_64-7.1-r3.iso
 *.img
 *.sfs
 kernel
