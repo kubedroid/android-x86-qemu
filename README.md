@@ -18,7 +18,7 @@ sudo docker run --rm -it \
     --device /dev/dri \
     --device /dev/vfio/vfio \
     --device /dev/vfio/12 \
-    quay.io/quamotion/android-x86-qemu:9.0-r2
+    quay.io/quamotion/android-x86-qemu:8.1-r4
 ```
 
 ## Accessing your Android VM

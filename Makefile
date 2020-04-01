@@ -1,8 +1,8 @@
-docker: android-x86_64-9.0-r2.iso
-	sudo docker build . -t quay.io/quamotion/android-x86-qemu:9.0-r2
+docker: android-x86_64-8.1-r4.iso
+	sudo docker build . -t quay.io/quamotion/android-x86-qemu:8.1-r4
 
-android-x86_64-9.0-r2.iso:
-	wget -nc https://osdn.net/dl/android-x86/android-x86_64-9.0-r2.iso -O android-x86_64-9.0-r2.iso
+android-x86_64-8.1-r4.iso:
+	wget -nc https://osdn.net/dl/android-x86/android-x86_64-8.1-r4.iso -O android-x86_64-8.1-r4.iso
 
 run:
 	sudo docker run --rm -it \
@@ -11,7 +11,7 @@ run:
 	  --ulimit memlock=-1:-1 \
 	  --device /dev/kvm \
 	  --device /dev/dri \
-	  quay.io/quamotion/android-x86-qemu:9.0-r2
+	  quay.io/quamotion/android-x86-qemu:8.1-r4
 
 debug:
 	sudo docker run --rm -it \
@@ -20,4 +20,4 @@ debug:
 	  --ulimit memlock=-1:-1 \
 	  --device /dev/kvm \
 	  --device /dev/dri \
-	  quay.io/quamotion/android-x86-qemu:9.0-r2 /bin/bash
+	  quay.io/quamotion/android-x86-qemu:8.1-r4 /bin/bash
