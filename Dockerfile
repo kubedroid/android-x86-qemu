@@ -53,6 +53,7 @@ COPY --from=build /android/kernel /android
 RUN apt-get update \
 && apt-get install -y --no-install-recommends nano qemu-system-x86 \
 && apt-get install -y --no-install-recommends libgl1 libegl1 libgl1-mesa-dri \
+&& apt-get install -y --no-install-recommends adb \
 && rm -rf /var/lib/apt/lists/*
 
 # You can pass additional kernel options by setting this environment variable.
@@ -60,5 +61,8 @@ RUN apt-get update \
 ENV ANDROID_KERNEL_OPTIONS="VIRT_WIFI=0"
 
 COPY run.sh /android/
+COPY healthcheck.sh /android/
 
 CMD [ "/android/run.sh" ]
+
+HEALTHCHECK CMD /android/healthcheck.sh
