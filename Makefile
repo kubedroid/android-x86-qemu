@@ -11,8 +11,6 @@ run:
 	  --ulimit memlock=-1:-1 \
 	  --device /dev/kvm \
 	  --device /dev/dri \
-	  --device /dev/vfio/vfio \
-	  --device /dev/vfio/12 \
 	  quay.io/quamotion/android-x86-qemu:9.0-r2
 
 debug:
@@ -22,6 +20,4 @@ debug:
 	  --ulimit memlock=-1:-1 \
 	  --device /dev/kvm \
 	  --device /dev/dri \
-	  --device /dev/vfio/vfio \
-	  --device /dev/vfio/12 \
 	  quay.io/quamotion/android-x86-qemu:9.0-r2 /bin/bash

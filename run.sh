@@ -10,11 +10,12 @@ device_id=$(ls /sys/bus/mdev/devices/)
 
 # "-M graphics=off" disables built-in graphics
 # "-display egl-graphics", together with "-device vfio-pci ...",
-# which will allow us to run with a vGPU.
+# which will allow us to run with a vGPU, or
+# "-device virtio-vga,virgl=on" to use a host-based GL renderer.
 
 # "-vnc :0" enables VNC for display 0, at port 5900.
 
-# "-device e1000... " 
+# "-device e1000... "
 # enables the default network, and forward TCP port 5555, over which adb connects
 
 qemu-system-x86_64 \
@@ -30,8 +31,8 @@ qemu-system-x86_64 \
      -serial stdio \
      -nodefaults \
      -M graphics=off \
-     -display egl-headless \
-     -device vfio-pci,sysfsdev=/sys/bus/mdev/devices/${device_id},display=on \
+     -display egl-headless,gl=on \
+     -device virtio-vga,virgl=on \
      -vnc :0 \
      -device e1000,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555 \
      -device virtio-tablet-pci
