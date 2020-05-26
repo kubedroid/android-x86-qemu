@@ -41,7 +41,7 @@ RUN mkdir ramdisk \
 && mkbootfs ./ramdisk | gzip > ramdisk.img \
 && rm -rf ./ramdisk
 
-FROM ubuntu:19.10
+FROM ubuntu:20.04
 
 WORKDIR /android
 
