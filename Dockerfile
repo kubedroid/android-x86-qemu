@@ -1,7 +1,7 @@
 FROM quay.io/kubedroid/android-x86-tools AS build
 
-ENV ISO_URL=https://osdn.net/dl/android-x86/android-x86_64-7.1-r3.iso
-ENV ISO_FILE=android-x86_64-7.1-r3.iso
+ENV ISO_URL=https://osdn.net/dl/android-x86/android-x86_64-7.1-r4.iso
+ENV ISO_FILE=android-x86_64-7.1-r4.iso
 
 WORKDIR /android
 
@@ -10,7 +10,7 @@ WORKDIR /android
 # We don't need the gitignore, but COPY fails if there are no files
 # to copy (e.g. the iso file doesn't exist). Adding the gitignore
 # to keep the command happy.
-COPY android-*-7.1-r3.iso .gitignore ./
+COPY android-*-7.1-r4.iso .gitignore ./
 RUN if [ ! -f $ISO_FILE ]; then wget -nc $ISO_URL -O $ISO_FILE; fi \
 #
 # Extract the root file system
