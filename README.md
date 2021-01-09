@@ -7,7 +7,7 @@ The output is a docker image, quay.io/kubedroid/android-x86-qemu:9.0-r2, which
 you can run in Docker.
 
 You can use this command to run this Docker image. It requires access to KVM and
-a vGPU. There's more information on how to create a vGPU at the of this document.
+a vGPU. There's more information on how to create a vGPU at the end of this document.
 
 ```
 sudo docker run --rm -it \
